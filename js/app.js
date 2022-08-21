@@ -30,6 +30,7 @@ function displaySelectedPlayer(playerCount) {
     }
 }
 
+// Calculate Player Expenses
 const calclute = document.getElementById('calculate-btn').addEventListener('click', function () {
     const perPlayer = playerInputElementById('per-player');
     const playerListCount = players.length;
@@ -37,13 +38,14 @@ const calclute = document.getElementById('calculate-btn').addEventListener('clic
     setValueElementById('total-expenses', playerExpenses);
 });
 
+// Total Calculate Amount
 document.getElementById('calculate-total-btn').addEventListener('click', function () {
     const managerAmount = playerInputElementById('manager-total');
     const coachAmount = playerInputElementById('coach-total');
 
     const playerExpenses = document.getElementById('total-expenses');
-    const playerExpensesAmountSring = playerExpenses.innerText;
-    const playerExpensesAmount = parseFloat(playerExpensesAmountSring);
+    const playerExpensesAmountString = playerExpenses.innerText;
+    const playerExpensesAmount = parseFloat(playerExpensesAmountString);
 
 
     const totalAmount = playerExpensesAmount + managerAmount + coachAmount;
