@@ -1,14 +1,14 @@
 let players = [];
 
 // Player Select Button
-function selectPlayer(player) {
+function selectPlayer(playerId) {
     if (players.length >= 5) {
         alert("Alridy 5 Player Added Can't add anymore");
     } else {
-        const playerName = player.parentNode.parentNode.children[0].innerText;
+        const playerName = playerId.parentNode.parentNode.children[0].innerText;
         players.push(playerName);
         displaySelectedPlayer(players);
-        const selectBtn = player.parentNode.children[0];
+        const selectBtn = playerId.parentNode.children[0];
         selectBtn.setAttribute('disabled', true);
         selectBtn.style.backgroundColor = 'gray';
     }
