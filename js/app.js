@@ -1,9 +1,13 @@
 let players = [];
+
 // Player Select Button
 function selectPlayer(player) {
     const playerName = player.parentNode.parentNode.children[0].innerText;
     players.push(playerName);
     displaySelectedPlayer(players);
+    const selectBtn = player.parentNode.children[0];
+    selectBtn.setAttribute('disabled', true);
+    selectBtn.style.backgroundColor = 'gray';
 }
 
 // Display Selected Player List
@@ -22,7 +26,7 @@ function displaySelectedPlayer(playerCount) {
     }
 }
 
-document.getElementById('calculate-btn').addEventListener('click', function () {
+const calclute = document.getElementById('calculate-btn').addEventListener('click', function () {
     const perPlayer = playerInputElementById('per-player');
     const playerListCount = players.length;
     const playerExpenses = perPlayer * playerListCount;
